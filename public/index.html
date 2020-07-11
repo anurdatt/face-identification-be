@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <img id="image" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
+        <script>
+            const socket = io.connect('http://localhost:3000')
+            const imageElm = document.getElementById('image')
+            var count = 0
+            socket.on('image', (image) => {
+                imageElm.src = `data:image/jpeg;base64,${image}`
+                console.log(count++)
+            })
+
+        </script>
+    </body>
+</html>
