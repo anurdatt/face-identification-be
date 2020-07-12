@@ -6,6 +6,11 @@ import { canvas, faceDetectionNet, faceDetectionOptions } from './commons';
 import * as http from 'http'
 import socket from 'socket.io'
 
+var port = process.env.PORT;
+if (port == null || port == "") {
+  port = "3000";
+}
+
 //require("@tensorflow/tfjs-node");
 //const tf = require("@tensorflow/tfjs");
 
@@ -29,7 +34,7 @@ let scoreThreshold = 0.5
 //const options = new faceapi.MtcnnOptions(mtcnnForwardParams)
 //const options = new faceapi.SsdMobilenetv1Options({ minConfidence })
 const options = new faceapi.TinyFaceDetectorOptions({ inputSize, scoreThreshold })
-var process:any = null
+var process_id:any = null
 
 
 class Queue<T>  {
@@ -138,17 +143,17 @@ app.get('/', async (req, res) => {
   const command = req.query.command
   if (command === 'start') {
     console.log('received start command')
-    if (process) {
-      clearInterval(process)
+    if (process_id) {
+      clearInterval(process_id)
     }
     
     startProcess()
   }
   else if (command === 'stop') {
     console.log('received stop command')
-    if (process) {
-      clearInterval(process)
-      process = null
+    if (process_id) {
+      clearInterval(process_id)
+      process_id = null
       wCap.release()
       wCap = undefined
     }
@@ -168,7 +173,7 @@ const startProcess = () => {
     }
     
 
-    process = setInterval(async () => {
+    process_id = setInterval(async () => {
         const frame = wCap.read()
         /*const data = new Uint8Array(frame.cvtColor(cv.COLOR_BGR2RGB).getData().buffer)
         const frameTensor = faceapi.tf.tensor3d(data, [frame.rows, frame.cols, 3])
@@ -266,5 +271,4 @@ const startProcess = () => {
     }, 1000/FPS)
 }
 
-
-server.listen(3000)
+server.listen(port)
