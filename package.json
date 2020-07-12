@@ -19,7 +19,8 @@
     "face-api.js": "^0.22.2",
     "opencv4nodejs": "^4.17.0",
     "socket.io": "^2.3.0",
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.6"
   },
   "devDependencies": {
     "@tensorflow/tfjs-node": "1.7.0",
@@ -27,7 +28,6 @@
     "@types/node": "^14.0.14",
     "@types/socket.io": "^2.1.8",
     "nodemon": "^2.0.4",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.6"
+    "ts-node": "^8.10.2"
   }
 }
