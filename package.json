@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon",
-    "build": "rm -rf build node_modules/opencv-build/opencv/build/modules/ximgproc node_modules/opencv-build/opencv/build/modules/xfeatures2d && tsc",
+    "build": "rm -rf build node_modules/opencv-build/opencv/build/modules/ximgproc node_modules/opencv-build/opencv/build/modules/xfeatures2d node_modules/opencv-build/opencv/build/modules/dnn node_modules/opencv-build/opencv/build/modules/flann node_modules/opencv-build/opencv/build/modules/videostab node_modules/opencv-build/opencv/build/modules/plot && tsc",
     "start": "npm run build && node build/index.js"
   },
   "author": "",
