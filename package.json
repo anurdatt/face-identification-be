@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon",
-    "build": "rm -rf build node_modules/opencv-build/opencv/build/modules/ximgproc node_modules/opencv-build/opencv/build/modules/xfeatures2d node_modules/opencv-build/opencv/build/modules/dnn node_modules/opencv-build/opencv/build/modules/flann node_modules/opencv-build/opencv/build/modules/videostab node_modules/opencv-build/opencv/build/modules/plot && tsc",
+    "build": "rm -rf build && tsc",
     "start": "npm run build && node build/index.js"
   },
   "author": "",
@@ -21,7 +21,6 @@
     "canvas": "^2.6.1",
     "express": "^4.17.1",
     "face-api.js": "^0.22.2",
-    "opencv4nodejs": "^4.17.0",
     "socket.io": "^2.3.0",
     "tslib": "^2.0.0"
   },

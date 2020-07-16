@@ -1,10 +1,19 @@
 import * as path from 'path'
 import express from 'express';
-import * as cv from 'opencv4nodejs'
 import * as faceapi from 'face-api.js'
 import { canvas, faceDetectionNet, faceDetectionOptions } from './commons';
 import * as http from 'http'
 import socket from 'socket.io'
+
+// Define a global variable 'Module' with a method 'onRuntimeInitialized':
+var Module = {
+  onRuntimeInitialized() {
+    // this is our application:
+    console.log(cv.getBuildInformation())
+  }
+}
+// Load 'opencv.js' assigning the value to the global variable 'cv'
+var cv = require('../libs/opencv.js')
 
 var port = process.env.PORT;
 if (port == null || port == "") {
@@ -14,6 +23,7 @@ if (port == null || port == "") {
 //require("@tensorflow/tfjs-node");
 //const tf = require("@tensorflow/tfjs");
 
+//console.log(JSON.parse(cv));
 const app = express()
 const server = new http.Server(app)
 const io = socket(server)
