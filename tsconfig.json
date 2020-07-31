@@ -19,6 +19,7 @@
     "strictNullChecks": true,
     "importHelpers": true,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
     "outDir": "build",
     "module": "commonjs",
     "target": "es5",

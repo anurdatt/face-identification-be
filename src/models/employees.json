@@ -1,0 +1,19 @@
+{
+    "employeeList" : [
+    {
+        "id": 1,
+        "name": "Anuran",
+        "deptId": 1
+    },
+    {
+        "id": 2,
+        "name": "Kaushik",
+        "deptId": 2
+    },
+    {
+        "id": 3,
+        "name": "Arnab",
+        "deptId": 1
+    }
+    ]
+}
