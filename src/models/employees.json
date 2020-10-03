@@ -1,18 +1,18 @@
 {
-    "employeeList" : [
+    "empList" : [
     {
         "id": 1,
-        "name": "Anuran",
+        "name": "Tom",
         "deptId": 1
     },
     {
         "id": 2,
-        "name": "Kaushik",
+        "name": "Dick",
         "deptId": 2
     },
     {
         "id": 3,
-        "name": "Arnab",
+        "name": "Harry",
         "deptId": 1
     }
     ]
