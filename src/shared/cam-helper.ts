@@ -1,5 +1,5 @@
 import * as faceutil from "./face-util";
-import * as wcutil from "../shared/webcam-util";
+//import * as wcutil from "../shared/webcam-util";
 import * as ipcutil from "../shared/ipcam-util";
 import * as fsdbutil from "../shared/fsdb-util";
 import * as fs from "fs";
@@ -8,33 +8,13 @@ var process_id:any, onvif_process_id:any
 const FPS = 10
 
 faceutil.init(fsdbutil.loadProfile())
-
+/*
 const startProcess = (io:any) => {
     var count = 0
 
     wcutil.initialize()
 
     process_id = setInterval(async () => {
-        
-        /*const data = new Uint8Array(frame.cvtColor(cv.COLOR_BGR2RGB).getData().buffer)
-        const frameTensor = faceapi.tf.tensor3d(data, [frame.rows, frame.cols, 3])
-    
-        console.log ('#############Here i am 1###########')
-        const fullFaceDescriptions = await faceapi.detectAllFaces(frameTensor, options)
-        .withFaceLandmarks()
-        .withFaceDescriptors()
-    
-        console.log ('#############Here i am 2###########')
-        const fullFaceDrawBoxes = fullFaceDescriptions
-        .map(res => res.detection.box)
-        .map((box, i) => new faceapi.draw.DrawBox(box, { label: "Unknown" }))
-        console.log ('#############Here i am###########')
-        const outCanvas = faceapi.createCanvasFromMedia(
-            new canvas.ImageData(new Uint8ClampedArray(data.subarray, data.byteOffset, data.byteLength), 
-            frame.cols, frame.rows))
-        console.log ('#############Here i am after canvas 1###########')
-        fullFaceDrawBoxes.forEach(drawBox => drawBox.draw(outCanvas))
-        console.log ('#############Here i am after canvas 2###########') */
 
         const frame = wcutil.readFrame()
         let processedImage = await faceutil.getRecognizedImage(frame.data, {
@@ -49,7 +29,7 @@ const startProcess = (io:any) => {
         console.log(count++)
       //})
     }, 1000/FPS)
-}
+}*/
 
 const startRTSPStreaming = () => {
     return ipcutil.startRTSPStreaming()
@@ -107,7 +87,7 @@ const startOnvifProcess = (io:any) => {
 
   
 const executeCommand = (command:any, opts: any) => {
-    if (command === 'start') {
+    /* if (command === 'start') {
         console.log('received start command')
         if (process_id) {
           clearInterval(process_id)
@@ -125,7 +105,7 @@ const executeCommand = (command:any, opts: any) => {
         }
         return true  
     }
-    else if (command === 'start_rtsp') {
+    else  */if (command === 'start_rtsp') {
         console.log('received start_rtsp command')
         stopRTSPStreaming()
         return startRTSPStreaming(/* (data, error) => {

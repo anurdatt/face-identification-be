@@ -2,3 +2,4 @@
 build
 /ref_images
 npm-debug.log
+src/routes/shared/webcam-util.ts
