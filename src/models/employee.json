@@ -1,5 +1,5 @@
 {
-    "empList" : [
+    "employeeList" : [
     {
         "id": 1,
         "name": "Tom",
