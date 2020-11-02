@@ -1,6 +1,6 @@
 import * as fsdbUtil from  "../shared/fsdb-util";
 import * as genUtil from  "../shared/general-util";
-import { empList } from "../models/employees.json"
+import { employeeList } from "../models/employee.json"
 export interface IEmployee {
     id: number
     name: string
@@ -74,7 +74,7 @@ const saveEmployees = (uploader:string, csvData:Buffer) => {
 
 const getSampleEmployees = (): string => {
     //const empList:[] = fsdbUtil.loadEmployees()
-    return genUtil.jsonToCsv(empList)
+    return genUtil.jsonToCsv(employeeList)
 }
 
 export { fetchEmployees, saveEmployees, getSampleEmployees }

@@ -39,6 +39,7 @@ const loadProfile = ()  => {
 }
 
 const loadEmployees = ()  => {
+    console.log('BASEDIR = ' + BASEDIR)
     let employeesStr = ""
     try {
         employeesStr = fs.readFileSync(path.resolve(`${BASEDIR}/employee.json`)).toString()//, { encoding: "utf-8" })

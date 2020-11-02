@@ -1,1 +1,1 @@
-web: cp models/*.json /tmp/ && npm start
+web: cp src/models/*.json /tmp/ && npm start
